@@ -54,3 +54,17 @@
   margin: 15px 0px;
   font-size: 16px;
 }
+
+.likeButton{ 
+  border: none;
+  padding: 0;
+}
+
+.fa-heart{
+  cursor: pointer;
+  
+}
+
+.fas {
+  color: red;
+}

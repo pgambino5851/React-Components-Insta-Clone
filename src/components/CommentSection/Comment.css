@@ -18,6 +18,16 @@
   border-top: 1px solid #efefef;
   color: #999;
 }
+
+.commentContainer {
+  text-align: initial;
+  margin-left: 2rem;
+}
+
+.comment {
+  margin-bottom: 1.5rem;
+}
+
 .user {
   font-size: 14px;
   margin-left: 5px;

@@ -5,12 +5,38 @@ import Comment from "./Comment";
 import "./Comment.css";
 
 const CommentSection = props => {
+  console.log("Props from comment section:", props)
   // Add state for the comments
+  const initialState = props.comments;
+  const [comments, setComments] = useState(initialState);
+  const [comment, setComment] = useState("");
 
+  const submitComment = e =>  {
+    e.preventDefault()
+    console.log("e from submitComment", e)
+    console.log("submitComment ran")
+    console.log("A comment was submitted", {
+      username: "pgambino",
+      text: e.target.value
+    })
+    // setComments(...comments, {
+    //   username: "pgambino",
+    //   text: e.target.value
+    // })
+    console.log("Comments from submitComment", comments)
+  }
+
+  const changeComment = e => {
+    console.log("e from changeComment", e)
+    setComment(e.target.value);
+    console.log("Comment from changeComment", comment);
+  }
   return (
-    <div>
-      {/* map through the comments data and return the Comment component */}
-      <CommentInput />
+    <div >
+      {comments.map((comment, index) => {
+       return <Comment  key ={index} comment={comment}></Comment>
+      })}
+      <CommentInput changeComment = {changeComment} submitComment={submitComment} />
     </div>
   );
 };
